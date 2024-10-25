@@ -1,9 +1,9 @@
 import FriendListItem from "../FriendListItem/FriendListItem";
 import css from "./FriendList.module.css"
 
-function FrendList({friends}) {
+function FriendList({friends}) {
   return (
-    <ul className={css.frendList}>
+    <ul className={css.friendList}>
       {friends.map((friend) => {
         return (
           <FriendListItem
@@ -18,4 +18,4 @@ function FrendList({friends}) {
   );
 };
 
-export default FrendList;
+export default FriendList;
