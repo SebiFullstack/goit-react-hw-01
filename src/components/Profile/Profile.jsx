@@ -1,32 +1,31 @@
-import css from './Profile.module.css';
+import s from './Profile.module.css';
 
-export default function Profile({ name, tag, location, image, stats }) {
-     return (
-    <div className={css.card}>
-      <div className={css.avatarCard}>
-           <img className={css.avatarImg}
-          src={image}
-          alt="User avatar"
-        />
-        <p className={css.avatarName}> {name}</p>
-          <p className={css.avatarDescription}>@{tag}</p>
-          <p className={css.avatarDescription}>{location}</p>
+const Profile = ({ name, tag, location, image, stats }) => {
+  return (
+    <div className={s.container}>
+      <div className={s.card}>
+        <img src={image} alt="User avatar" className={s.img} />
+        <p className={s.name}>{name}</p>
+        <p className={s.p}>@{tag}</p>
+        <p className={s.p}>{location}</p>
       </div>
-    
-        <ul className={css.statisticList}>
-        <li className={css.statisticListItem}>
-            <span className={css.statisticName}>Followers</span>
-          <span className={css.statisticNumber}>{stats.followers}</span>
+
+      <ul className={s.list}>
+        <li className={s.item}>
+          <span>Followers</span>
+          <span className={s.numbers}>{stats.followers}</span>
         </li>
-        <li className={css.statisticListItem}>
-          <span className={css.statisticName}>Views</span>
-             <span className={css.statisticNumber}>{stats.views}</span>
+        <li className={s.item}>
+          <span>Views</span>
+          <span className={s.numbers}>{stats.views}</span>
         </li>
-        <li className={css.statisticListItem}>
-          <span className={css.statisticName}>Likes</span>
-             <span className={css.statisticNumber}>{stats.likes}</span>
+        <li className={s.item}>
+          <span>Likes</span>
+          <span className={s.numbers}>{stats.likes}</span>
         </li>
       </ul>
     </div>
-    );
-}
+  );
+};
+
+export default Profile;
