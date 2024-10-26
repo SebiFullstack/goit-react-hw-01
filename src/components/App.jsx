@@ -1,13 +1,12 @@
-import './App.css'
-import Profile from './Profile/Profile'
-import userData from "../userData.json";
-import FrendList from './FriendList/FriendList';
-import friends from "../friends.json";
-import TransactionHistory from './TransactionHistory/TransactionHistory';
-import transactions from "../transactions.json";
+import './App.css';
+import Profile from './components/Profile/Profile';
+import userData from '../src/userData.json';
+import FriendList from './components/FriendList/FriendList';
+import friends from '../src/friends.json';
+import TransactionHistory from './components/TransactionHistory/TransactionHistory';
+import transactions from '../src/transactions.json';
 
-function App() {
-  
+const App = () => {
   return (
     <>
       <Profile
@@ -17,12 +16,10 @@ function App() {
         image={userData.avatar}
         stats={userData.stats}
       />
-
-      <FrendList friends={friends} />
-      
-      <TransactionHistory transactions={transactions}/>
+      <FriendList friends={friends} />
+      <TransactionHistory items={transactions} />
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;
